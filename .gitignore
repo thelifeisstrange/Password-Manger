@@ -38,6 +38,7 @@ nb-configuration.xml
 
 # Database properties file with credentials
 database.properties
+config.properties
 
 # macOS specific files
 .DS_Store
