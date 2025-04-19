@@ -1,6 +1,23 @@
-# SecureVault Password Manager
+# Password Manager Application
 
-A secure password and notes manager application built with Java Swing.
+A secure password and notes manager application built with Java Swing and MySQL.
+
+## SECURITY NOTICE
+
+For security and privacy reasons, this repository has been moved to a new location.
+The history of this repository contained sensitive information that has been removed in the new repository.
+
+Please see the organization's repositories for the new location.
+
+## Steps Taken
+
+1. The password information has been removed from the current codebase
+2. A new repository has been created without the sensitive information in its history
+3. Development will continue in the new repository
+
+## How to Find the New Repository
+
+Please contact the repository owner for access to the new repository.
 
 ## Quick Start (First-time Setup)
 
