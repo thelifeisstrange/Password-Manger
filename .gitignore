@@ -1,0 +1,48 @@
+# Compiled class files
+*.class
+
+# Output directories
+out/
+bin/
+target/
+build/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# VS Code files
+.vscode/
+
+# NetBeans files
+nbproject/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# Database properties file with credentials
+database.properties
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini 
