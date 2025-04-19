@@ -1,0 +1,11 @@
+# Database Configuration Template
+# Copy this file to database.properties and update with your actual credentials
+
+# Database connection URL
+db.url=jdbc:mysql://localhost:3306/passwordmanager
+
+# Database username
+db.user=root
+
+# Database password - replace with your actual MySQL password
+db.password=your_password_here 

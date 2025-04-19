@@ -1,23 +1,55 @@
 package com.passwordmanager.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.Properties;
 
 /**
  * Utility class for database operations
  */
 public class DatabaseUtil {
 
-    // MySQL connection parameters
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/passwordmanager";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Kulkarni"; // Set your MySQL password here if needed
+    // MySQL connection parameters with values loaded from properties file
+    private static String DB_URL;
+    private static String DB_USER;
+    private static String DB_PASSWORD;
     
     static {
+        // Default values
+        DB_URL = "jdbc:mysql://localhost:3306/passwordmanager";
+        DB_USER = "root";
+        DB_PASSWORD = "";
+        
+        // Try to load from properties file
+        try {
+            Properties props = new Properties();
+            File configFile = new File("database.properties");
+            
+            if (configFile.exists()) {
+                try (FileInputStream fis = new FileInputStream(configFile)) {
+                    props.load(fis);
+                    
+                    // Override with values from properties if they exist
+                    DB_URL = props.getProperty("db.url", DB_URL);
+                    DB_USER = props.getProperty("db.user", DB_USER);
+                    if (props.containsKey("db.password")) {
+                        DB_PASSWORD = props.getProperty("db.password");
+                    }
+                    System.out.println("Database configuration loaded from properties file");
+                }
+            } else {
+                System.out.println("No database.properties file found, using default connection settings");
+            }
+        } catch (Exception e) {
+            System.err.println("Error loading database properties: " + e.getMessage());
+        }
+        
         System.out.println("Using MySQL database at: " + DB_URL);
         
         // Initialize database on startup
